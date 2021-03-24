@@ -2,31 +2,31 @@
 import {
     isYes,
     isNo,
- } from './utils.js';
+} from './utils.js';
 // initialize state
 
 // set event listeners to update state and DOM
 
 
-const button = document.getElementById('button')
-const results = document.getElementById('results')
-const owl = 'Owl'
+const button = document.getElementById('button');
+const results = document.getElementById('results');
+const owl = 'Owl';
 
 
 button.addEventListener('click', () => {
-    alert (`Welcome 2 ${owl}'s Quiz!`)
-    const startConfirm = confirm('Are you ready to play?') 
-        if (!startConfirm) {
-        return alert('Bubye :(')
+    alert (`Welcome 2 ${owl}'s Quiz!`);
+    const startConfirm = confirm('Are you ready to play?'); 
+    if (!startConfirm) {
+        return alert('Bubye :(');
     }
-    const letsBegin = alert('Let us begin...')
-    const name = prompt('What is your name?')
+    const letsBegin = alert('Let us begin...');
+    const name = prompt('What is your name?');
     
     let score = 0;
 
-    const firstQuestion = prompt(`Can some ${owl}'s live over 20 years old?`)
-    const secondQuestion = prompt(`Do ${owl}'s live in Oregon?`)
-    const thirdQuestion = prompt(`Are ${owl}'s loud flyers?`)
+    const firstQuestion = prompt(`Can some ${owl}'s live over 20 years old?`);
+    const secondQuestion = prompt(`Do ${owl}'s live in Oregon?`);
+    const thirdQuestion = prompt(`Are ${owl}'s loud flyers?`);
 
     if (!isNo(firstQuestion)) {
         score++;
@@ -34,10 +34,10 @@ button.addEventListener('click', () => {
     if (!isNo(secondQuestion)) { 
         score++; 
     }
-    if (!isYes(thirdQuestion)) { 
+    if (isNo(thirdQuestion)) { 
         score++;
     }
-      console.log(score)  
-    const resultsString = `Good Job ${name}, you got ${score} questions right!`
-            results.textContent = resultsString
-})
+        
+    const resultsString = `Good Job ${name}, you got ${score} questions right!`;
+    results.textContent = resultsString;
+});
