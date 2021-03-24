@@ -9,11 +9,11 @@ import {
 
 const button = document.getElementById('button')
 const results = document.getElementById('results')
-const z = 'Zach'
+const owl = 'Owl'
 
 
 button.addEventListener('click', () => {
-    alert (`Welcome 2 ${z}'s Quiz!`)
+    alert (`Welcome 2 ${owl}'s Quiz!`)
     const startConfirm = confirm('Are you ready to play?') 
         if (!startConfirm) {
         return alert('Bubye :(')
@@ -23,9 +23,9 @@ button.addEventListener('click', () => {
     
     let score = 0;
 
-    const firstQuestion = prompt(`Is ${z} over 20 years old?`)
-    const secondQuestion = prompt(`Was ${z} born in Oregon?`)
-    const thirdQuestion = prompt(`Is ${z} a profesional web developer?`)
+    const firstQuestion = prompt(`Can some ${owl}'s live over 20 years old?`)
+    const secondQuestion = prompt(`Do ${owl}'s live in Oregon?`)
+    const thirdQuestion = prompt(`Are ${owl}'s loud flyers?`)
 
     if (isYes(firstQuestion)) {
         score++;
@@ -33,7 +33,7 @@ button.addEventListener('click', () => {
     if (isYes(secondQuestion)) { 
         score++; 
     }
-    if (isYes(thirdQuestion)) { 
+    if (!isYes(thirdQuestion)) { 
         score++;
     }
       console.log(score)  
