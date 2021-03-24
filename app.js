@@ -1,6 +1,7 @@
 // import functions and grab DOM elements
 import {
     isYes,
+    isNo,
  } from './utils.js';
 // initialize state
 
@@ -27,10 +28,10 @@ button.addEventListener('click', () => {
     const secondQuestion = prompt(`Do ${owl}'s live in Oregon?`)
     const thirdQuestion = prompt(`Are ${owl}'s loud flyers?`)
 
-    if (isYes(firstQuestion)) {
+    if (!isNo(firstQuestion)) {
         score++;
     }
-    if (isYes(secondQuestion)) { 
+    if (!isNo(secondQuestion)) { 
         score++; 
     }
     if (!isYes(thirdQuestion)) { 
